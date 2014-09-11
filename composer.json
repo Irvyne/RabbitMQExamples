@@ -1,0 +1,15 @@
+{
+    "name": "irvyne/rabbitmq-examples",
+    "description": "Examples for RabbitMQ",
+    "minimum-stability": "stable",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Thibaud BARDIN",
+            "email": "thibaud.bardin@gmail.com"
+        }
+    ],
+    "require": {
+        "videlalvaro/php-amqplib": "~2.4.0"
+    }
+}
