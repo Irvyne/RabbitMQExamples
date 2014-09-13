@@ -23,7 +23,7 @@ First of all, install RabbitMQ locally.
 1. In one terminal receive logs on screen ```php receive_logs.php``` or save them ```php receive_logs.php > logs_from_rabbit.log```
 2. In another terminal do the same as above (2 receivers)
 3. Now, emit log with ```php emit_log.php```
-4. Using rabbitmqctl list_bindings you can verify that the code actually creates bindings and queues as we want. With two receive_logs.rb programs running you should see something like:
+4. Using rabbitmqctl list_bindings you can verify that the code actually creates bindings and queues as we want. With two receive_logs.php programs running you should see something like:
 ```
 sudo rabbitmqctl list_bindings
 Listing bindings ...
