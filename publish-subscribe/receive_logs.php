@@ -27,13 +27,13 @@ $channel->queue_bind($queue_name, 'logs');
 
 echo ' [*] Waiting for logs. To exit press CTRL+C', "\n";
 
-$callback = function($msg){
+$callback = function ($msg) {
     echo ' [x] ', $msg->body, "\n";
 };
 
 $channel->basic_consume($queue_name, '', false, true, false, false, $callback);
 
-while(count($channel->callbacks)) {
+while (count($channel->callbacks)) {
     $channel->wait();
 }
 

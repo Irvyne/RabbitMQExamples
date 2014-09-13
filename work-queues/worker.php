@@ -23,7 +23,7 @@ $channel->queue_declare('task_queue', false, true, false, false);
 
 echo ' [*] Waiting for messages. To exit press CTRL+C', "\n";
 
-$callback = function($msg) {
+$callback = function ($msg) {
     echo ' [x] Received ', $msg->body, "\n";
     sleep(substr_count($msg->body, '.'));
     echo ' [x] Done', "\n";
@@ -37,7 +37,7 @@ $callback = function($msg) {
 $channel->basic_qos(null, 1, null);
 $channel->basic_consume('task_queue', '', false, false, false, false, $callback);
 
-while(count($channel->callbacks)) {
+while (count($channel->callbacks)) {
     $channel->wait();
 }
 
