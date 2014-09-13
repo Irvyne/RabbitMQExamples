@@ -10,6 +10,22 @@
         }
     ],
     "require": {
-        "videlalvaro/php-amqplib": "~2.4.0"
+        "php": ">=5.5.3",
+        "incenteev/composer-parameter-handler": "~2.0",
+        "symfony/yaml": "~2.5",
+        "videlalvaro/php-amqplib": "~2.4"
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters"
+        ],
+        "post-update-cmd": [
+            "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters"
+        ]
+    },
+    "extra": {
+        "incenteev-parameters": {
+            "file": "parameters.yml"
+        }
     }
 }

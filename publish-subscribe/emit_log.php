@@ -20,15 +20,13 @@ $connection = new AMQPConnection(
 );
 $channel = $connection->channel();
 
-$channel->queue_declare('task_queue', false, true, false, false);
+$channel->exchange_declare('logs', 'fanout', false, false, false);
 
 $data = implode(' ', array_slice($argv, 1));
-if(empty($data)) $data = "Hello World!";
-$msg = new AMQPMessage($data,
-    ['delivery_mode' => 2] // make message persistent
-);
+if(empty($data)) $data = 'info: Hello World!';
+$msg = new AMQPMessage($data);
 
-$channel->basic_publish($msg, '', 'task_queue');
+$channel->basic_publish($msg, 'logs');
 
 echo ' [x] Sent ', $data, "\n";
 
