@@ -1,6 +1,10 @@
 # RabbitMQ Examples
 
-First of all, install RabbitMQ locally.
+## Requirements
+
+* First of all, install RabbitMQ locally
+* Then make sur you have composer installed, if not [go here](https://getcomposer.org/download)
+* Then run ```php composer.phar install``` if composer is installed locally or ```composer install``` if it's installed globally
 
 ## [Hello World](https://github.com/Irvyne/RabbitMQExamples/tree/master/hello-world)
 
